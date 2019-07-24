@@ -21,6 +21,11 @@
 		D3D1C64722E89E8A005313E1 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C64622E89E8A005313E1 /* Video.swift */; };
 		D3D1C64922E8A392005313E1 /* VideoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C64822E8A392005313E1 /* VideoDetails.swift */; };
 		D3D1C64B22E8ABF3005313E1 /* ParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C64A22E8ABF3005313E1 /* ParsingError.swift */; };
+		D3D1C64D22E8ADF4005313E1 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C64C22E8ADF4005313E1 /* VideoService.swift */; };
+		D3D1C64F22E8AED5005313E1 /* DYVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C64E22E8AED5005313E1 /* DYVideoService.swift */; };
+		D3D1C65122E8B0E6005313E1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C65022E8B0E6005313E1 /* ServiceError.swift */; };
+		D3D1C65322E8BC46005313E1 /* VideoDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C65222E8BC46005313E1 /* VideoDetailService.swift */; };
+		D3D1C65522E8BCA0005313E1 /* DYVideoDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C65422E8BCA0005313E1 /* DYVideoDetailService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		D3D1C64622E89E8A005313E1 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		D3D1C64822E8A392005313E1 /* VideoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetails.swift; sourceTree = "<group>"; };
 		D3D1C64A22E8ABF3005313E1 /* ParsingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingError.swift; sourceTree = "<group>"; };
+		D3D1C64C22E8ADF4005313E1 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
+		D3D1C64E22E8AED5005313E1 /* DYVideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYVideoService.swift; sourceTree = "<group>"; };
+		D3D1C65022E8B0E6005313E1 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		D3D1C65222E8BC46005313E1 /* VideoDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailService.swift; sourceTree = "<group>"; };
+		D3D1C65422E8BCA0005313E1 /* DYVideoDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYVideoDetailService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +149,11 @@
 			children = (
 				D3D1C62A22E89AD4005313E1 /* Service.h */,
 				D3D1C62B22E89AD4005313E1 /* Info.plist */,
+				D3D1C64C22E8ADF4005313E1 /* VideoService.swift */,
+				D3D1C65222E8BC46005313E1 /* VideoDetailService.swift */,
+				D3D1C65022E8B0E6005313E1 /* ServiceError.swift */,
+				D3D1C64E22E8AED5005313E1 /* DYVideoService.swift */,
+				D3D1C65422E8BCA0005313E1 /* DYVideoDetailService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -248,6 +263,7 @@
 					};
 					D3D1C62722E89AD4005313E1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					D3D1C63922E89AE7005313E1 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -316,6 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D1C65522E8BCA0005313E1 /* DYVideoDetailService.swift in Sources */,
+				D3D1C65122E8B0E6005313E1 /* ServiceError.swift in Sources */,
+				D3D1C64F22E8AED5005313E1 /* DYVideoService.swift in Sources */,
+				D3D1C65322E8BC46005313E1 /* VideoDetailService.swift in Sources */,
+				D3D1C64D22E8ADF4005313E1 /* VideoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +542,7 @@
 		D3D1C63222E89AD4005313E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -539,6 +561,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.diana.Service;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -549,6 +572,7 @@
 		D3D1C63322E89AD4005313E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

@@ -20,7 +20,7 @@ public struct VideoDetails {
     private static var dateFormatter: DateFormatter {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
         
         return dateFormatter
