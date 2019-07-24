@@ -31,6 +31,8 @@
 		D3D1C65722E8C5DA005313E1 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C65622E8C5DA005313E1 /* VideosViewController.swift */; };
 		D3D1C65922E8C81D005313E1 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C65822E8C81D005313E1 /* VideoCell.swift */; };
 		D3D1C65C22E8CA0F005313E1 /* UITableView+Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C65B22E8CA0F005313E1 /* UITableView+Message.swift */; };
+		D3D1C65E22E8D160005313E1 /* VideoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C65D22E8D160005313E1 /* VideoDetailsViewController.swift */; };
+		D3D1C66022E8DDDF005313E1 /* DateComponents+DurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C65F22E8DDDF005313E1 /* DateComponents+DurationParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		D3D1C65622E8C5DA005313E1 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		D3D1C65822E8C81D005313E1 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		D3D1C65B22E8CA0F005313E1 /* UITableView+Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Message.swift"; sourceTree = "<group>"; };
+		D3D1C65D22E8D160005313E1 /* VideoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsViewController.swift; sourceTree = "<group>"; };
+		D3D1C65F22E8DDDF005313E1 /* DateComponents+DurationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateComponents+DurationParser.swift"; sourceTree = "<group>"; };
 		F65A50C82D2A8CA5A52C7A5E /* Pods-Model.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.debug.xcconfig"; path = "Target Support Files/Pods-Model/Pods-Model.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,9 +182,11 @@
 		D3D1C61022E884EF005313E1 /* DemoYoutubeApp */ = {
 			isa = PBXGroup;
 			children = (
+				D3D1C66122E8DDFB005313E1 /* External Libraries */,
 				D3D1C65A22E8C9FE005313E1 /* Extensions */,
 				D3D1C61122E884EF005313E1 /* AppDelegate.swift */,
 				D3D1C65622E8C5DA005313E1 /* VideosViewController.swift */,
+				D3D1C65D22E8D160005313E1 /* VideoDetailsViewController.swift */,
 				D3D1C65822E8C81D005313E1 /* VideoCell.swift */,
 				D3D1C61522E884EF005313E1 /* Main.storyboard */,
 				D3D1C61822E884F9005313E1 /* Assets.xcassets */,
@@ -222,6 +228,14 @@
 				D3D1C65B22E8CA0F005313E1 /* UITableView+Message.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D3D1C66122E8DDFB005313E1 /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D3D1C65F22E8DDDF005313E1 /* DateComponents+DurationParser.swift */,
+			);
+			path = "External Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +484,8 @@
 				D3D1C65722E8C5DA005313E1 /* VideosViewController.swift in Sources */,
 				D3D1C65922E8C81D005313E1 /* VideoCell.swift in Sources */,
 				D3D1C65C22E8CA0F005313E1 /* UITableView+Message.swift in Sources */,
+				D3D1C65E22E8D160005313E1 /* VideoDetailsViewController.swift in Sources */,
+				D3D1C66022E8DDDF005313E1 /* DateComponents+DurationParser.swift in Sources */,
 				D3D1C61222E884EF005313E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

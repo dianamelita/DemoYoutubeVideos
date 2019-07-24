@@ -67,4 +67,13 @@ extension VideosViewController: UITableViewDelegate, UITableViewDataSource {
         tableCell.update(with: video)
         return tableCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let videoDetailsVC = storyboard?.instantiateViewController(withIdentifier: "VideoDetails") as? VideoDetailsViewController else { return }
+        
+        let videoTapped = videos[indexPath.row]
+        videoDetailsVC.videoId = videoTapped.id
+        navigationController?.pushViewController(videoDetailsVC, animated: true)
+    }
 }
