@@ -42,7 +42,7 @@ class VideoDetailsViewController: UIViewController {
                 if let duration = videoDetails?.duration {
                     self.durationLabel.text = self.getFormattedVideoDuration(duration)
                 }
-                self.videoImage.sd_setImage(with: videoDetails?.thumbnail, placeholderImage: nil)
+                self.videoImage.sd_setImage(with: videoDetails?.thumbnail, placeholderImage: UIImage(named: "video"))
             }
         }
     }

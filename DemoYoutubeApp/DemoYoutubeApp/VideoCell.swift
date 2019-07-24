@@ -17,7 +17,7 @@ class VideoCell: UITableViewCell {
     
     func update(with video: Video) {
         videoTitle.text = video.title
-        videoThumbnail.sd_setImage(with: video.thumbnail, placeholderImage: nil)
+        videoThumbnail.sd_setImage(with: video.thumbnail, placeholderImage: UIImage(named: "video"))
     }
     
     override func prepareForReuse() {
