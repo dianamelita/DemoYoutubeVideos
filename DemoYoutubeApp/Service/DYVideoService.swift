@@ -61,12 +61,13 @@ public class DYVideoService: VideoService {
         let partElement = URLQueryItem(name: "part", value: "snippet")
         let maxResultsElement = URLQueryItem(name: "maxResults", value: "10")
         let channelIdElement = URLQueryItem(name: "channelId", value: "\(channelId)")
+        let orderElement = URLQueryItem(name: "order", value: "date")
         let keyElement = URLQueryItem(name: "key", value: DYVideoService.apiKey)
         
         var urlComponents = URLComponents(url: DYVideoService.baseUrl,
                                           resolvingAgainstBaseURL: true)
         
-        urlComponents?.queryItems = [partElement, maxResultsElement, channelIdElement, keyElement]
+        urlComponents?.queryItems = [partElement, maxResultsElement, channelIdElement, orderElement, keyElement]
         if let nextPageToken = nextPageToken {
             let nextPageElement = URLQueryItem(name: "pageToken", value: "\(nextPageToken)")
             urlComponents?.queryItems?.append(nextPageElement)
