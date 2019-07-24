@@ -15,26 +15,24 @@ class VideosViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private var videos: [Video] = []
-    private var videoService: VideoService = DYVideoService()
-    private let channelId = "UC_A--fhX5gea0i4UtpD99Gg"
-    
+    private var videoService: VideoService = DYVideoService(channelId: "UC_A--fhX5gea0i4UtpD99Gg")
+  
     override func viewDidLoad() {
         
         super.viewDidLoad()
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(getAllVideos), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(fetchVideos), for: .valueChanged)
         
         tableView.refreshControl = refreshControl
         tableView.refreshControl?.beginRefreshing()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        getAllVideos()
+        fetchVideos()
     }
     
-    @objc private func getAllVideos() {
-        videoService.retrieveVideos(for: channelId) { (videos, error) in
-           
+    @objc private func fetchVideos() {
+        videoService.retrieveVideos() { (videos, error) in
             DispatchQueue.main.async {
                 
                 self.tableView.refreshControl?.endRefreshing()
@@ -43,8 +41,7 @@ class VideosViewController: UIViewController {
                     return
                 }
                 self.tableView.hideMessageLabel()
-                
-                self.videos = videos ?? []
+                self.videos.append(contentsOf: videos ?? [])
                 self.tableView.reloadData()
             }
         }
@@ -66,6 +63,12 @@ extension VideosViewController: UITableViewDelegate, UITableViewDataSource {
         let video = videos[indexPath.row]
         tableCell.update(with: video)
         return tableCell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == videos.count - 1 {
+            fetchVideos()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

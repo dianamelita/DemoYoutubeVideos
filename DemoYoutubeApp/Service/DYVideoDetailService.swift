@@ -18,7 +18,7 @@ public class DYVideoDetailService: VideoDetailService {
     public init() {}
     
     private static let baseUrl: URL! = URL(string: "https://www.googleapis.com/youtube/v3/videos")
-    private static let apiKey = "AIzaSyD2kVom6tFIhxPqg9w8Us5OfQc9sDSQjnM"
+    private static let apiKey = "AIzaSyD3gOMnpD0DsnNVJPlSxVy2-HpT8109Alo"
     
     public func retrieveVideoDetails(for videoId: String, completion: @escaping (VideoDetails?, Error?) -> Void) {
         

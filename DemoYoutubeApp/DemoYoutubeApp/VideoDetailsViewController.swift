@@ -18,13 +18,13 @@ class VideoDetailsViewController: UIViewController {
     @IBOutlet private weak var datePublishedLabel: UILabel!
     @IBOutlet private weak var durationLabel: UILabel!
     
-    public var wantsToExit: ((Bool) -> Void)?
     public var videoId: String!
     
     private var videoDetailsService: VideoDetailService = DYVideoDetailService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Video Details"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd yyyy, HH:mm"
         

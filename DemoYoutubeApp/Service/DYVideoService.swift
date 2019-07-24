@@ -10,18 +10,23 @@ import Foundation
 import Model
 
 private struct VideoInfo: Decodable {
-    public let items: [Video]
+    let items: [Video]
+    let nextPageToken: String?
 }
 
 public class DYVideoService: VideoService {
     
-    public init() {}
-    
     private static let baseUrl: URL! = URL(string: "https://www.googleapis.com/youtube/v3/search")
-    private static let apiKey = "AIzaSyD2kVom6tFIhxPqg9w8Us5OfQc9sDSQjnM"
+    private static let apiKey = "AIzaSyD3gOMnpD0DsnNVJPlSxVy2-HpT8109Alo"
     
-    public func retrieveVideos(for channelId: String, completion: @escaping ([Video]?, Error?) -> Void) {
-        
+    private let channelId: String
+    private var nextPageToken: String?
+    
+    public init(channelId: String) {
+        self.channelId = channelId
+    }
+    
+    public func retrieveVideos(completion: @escaping ([Video]?, Error?) -> Void) {
         guard let videoRetrievalUrl = constructVideoRetrievalUrl(for: channelId) else {
             completion(nil, ServiceError.urlBuilderFail(details: "Could not build URL for channel ID \(channelId)"))
             return
@@ -42,6 +47,7 @@ public class DYVideoService: VideoService {
             
             do {
                 let videoArray = try jsonDecoder.decode(VideoInfo.self, from: data)
+                self.nextPageToken = videoArray.nextPageToken
                 completion(videoArray.items, nil)
             } catch {
                 
@@ -53,12 +59,18 @@ public class DYVideoService: VideoService {
     
     private func constructVideoRetrievalUrl(for channelId: String) -> URL? {
         let partElement = URLQueryItem(name: "part", value: "snippet")
+        let maxResultsElement = URLQueryItem(name: "maxResults", value: "10")
         let channelIdElement = URLQueryItem(name: "channelId", value: "\(channelId)")
         let keyElement = URLQueryItem(name: "key", value: DYVideoService.apiKey)
         
         var urlComponents = URLComponents(url: DYVideoService.baseUrl,
                                           resolvingAgainstBaseURL: true)
-        urlComponents?.queryItems = [partElement, channelIdElement, keyElement]
+        
+        urlComponents?.queryItems = [partElement, maxResultsElement, channelIdElement, keyElement]
+        if let nextPageToken = nextPageToken {
+            let nextPageElement = URLQueryItem(name: "pageToken", value: "\(nextPageToken)")
+            urlComponents?.queryItems?.append(nextPageElement)
+        }
         return urlComponents?.url
     }
 }

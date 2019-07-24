@@ -11,5 +11,5 @@ import Model
 
 public protocol VideoService {
     
-    func retrieveVideos(for channelId: String, completion: @escaping ([Video]?, Error?) -> Void)
+    func retrieveVideos(completion: @escaping ([Video]?, Error?) -> Void)
 }
