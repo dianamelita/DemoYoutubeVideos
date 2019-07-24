@@ -18,6 +18,9 @@
 		D3D1C63E22E89AE7005313E1 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = D3D1C63C22E89AE7005313E1 /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3D1C64122E89AE7005313E1 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D1C63A22E89AE7005313E1 /* Model.framework */; };
 		D3D1C64222E89AE7005313E1 /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3D1C63A22E89AE7005313E1 /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3D1C64722E89E8A005313E1 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C64622E89E8A005313E1 /* Video.swift */; };
+		D3D1C64922E8A392005313E1 /* VideoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C64822E8A392005313E1 /* VideoDetails.swift */; };
+		D3D1C64B22E8ABF3005313E1 /* ParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1C64A22E8ABF3005313E1 /* ParsingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		D3D1C63A22E89AE7005313E1 /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D1C63C22E89AE7005313E1 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		D3D1C63D22E89AE7005313E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3D1C64622E89E8A005313E1 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		D3D1C64822E8A392005313E1 /* VideoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetails.swift; sourceTree = "<group>"; };
+		D3D1C64A22E8ABF3005313E1 /* ParsingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,9 @@
 			children = (
 				D3D1C63C22E89AE7005313E1 /* Model.h */,
 				D3D1C63D22E89AE7005313E1 /* Info.plist */,
+				D3D1C64622E89E8A005313E1 /* Video.swift */,
+				D3D1C64A22E8ABF3005313E1 /* ParsingError.swift */,
+				D3D1C64822E8A392005313E1 /* VideoDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +251,7 @@
 					};
 					D3D1C63922E89AE7005313E1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -313,6 +323,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D1C64922E8A392005313E1 /* VideoDetails.swift in Sources */,
+				D3D1C64B22E8ABF3005313E1 /* ParsingError.swift in Sources */,
+				D3D1C64722E89E8A005313E1 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +483,7 @@
 		D3D1C62122E884F9005313E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -488,6 +502,7 @@
 		D3D1C62222E884F9005313E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -562,6 +577,7 @@
 		D3D1C64422E89AE7005313E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -580,6 +596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.diana.Model;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -590,6 +607,7 @@
 		D3D1C64522E89AE7005313E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
