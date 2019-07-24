@@ -32,7 +32,7 @@ extension Video: Decodable {
     }
     
     private enum ThumbnailCodingKey: String, CodingKey {
-        case defaultThumbnail = "default"
+        case mediumThumbnail = "medium"
     }
     
     private enum DefaultThumbnailCodingKey: String, CodingKey {
@@ -49,8 +49,8 @@ extension Video: Decodable {
         title = try snippetContainer.decode(String.self, forKey: .title)
         
         let thumbnailsContainer = try snippetContainer.nestedContainer(keyedBy: ThumbnailCodingKey.self, forKey: .thumbnails)
-        let defaultThumbnailContainer = try thumbnailsContainer.nestedContainer(keyedBy: DefaultThumbnailCodingKey.self, forKey: .defaultThumbnail)
+        let mediumThumbnailContainer = try thumbnailsContainer.nestedContainer(keyedBy: DefaultThumbnailCodingKey.self, forKey: .mediumThumbnail)
         
-        thumbnail = try defaultThumbnailContainer.decode(URL.self, forKey: .url)
+        thumbnail = try mediumThumbnailContainer.decode(URL.self, forKey: .url)
     }
 }

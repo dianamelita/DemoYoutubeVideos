@@ -43,7 +43,7 @@ extension VideoDetails: Decodable {
     }
     
     private enum ThumbnailsCodingKey: String, CodingKey {
-        case medium
+        case standard
     }
     
     private enum MediumThumbnailCodingKey: String, CodingKey {
@@ -73,7 +73,7 @@ extension VideoDetails: Decodable {
         datePublished = datePublishedFormatted
 
         let thumbnailsContainer = try snippetContainer.nestedContainer(keyedBy: ThumbnailsCodingKey.self, forKey: .thumbnails)
-        let mediumThumbnailContainer = try thumbnailsContainer.nestedContainer(keyedBy: MediumThumbnailCodingKey.self, forKey: .medium)
-        thumbnail = try mediumThumbnailContainer.decode(URL.self, forKey: .url)
+        let standardThumbnailContainer = try thumbnailsContainer.nestedContainer(keyedBy: MediumThumbnailCodingKey.self, forKey: .standard)
+        thumbnail = try standardThumbnailContainer.decode(URL.self, forKey: .url)
     }
 }
