@@ -1,6 +1,10 @@
 # DemoYoutubeVideos
 A demo application that fetches video information from the Youtube API
 
+## Project installation
+This project is using [CocoaPods](https://cocoapods.org/) for dependency injection.
+To install all dependencies, all you have to do is, in terminal, navigate to the project folder and run the command 'pod install'.
+
 ## Application Layers
 I have split the application into 3 basic layers:
 - Model Layer contains two separate objects, one for Video and another for VideoDetails. The reason for this is 
